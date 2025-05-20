@@ -1,0 +1,232 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Universal Conversion</title>
+   <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code&family=Josefin+Sans&display=swap" rel="stylesheet">
+  <meta name="robots" content="index, follow">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Josefin Sans", sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    nav {
+      background-color: #ad2831;
+      padding: 10px 20px;
+    }
+    .bsc {
+      font-family: "Cascadia Code";
+      font-size: 30px;
+      color: white;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 18px;
+    }
+    nav a:hover {
+      color: #f7b538;
+    }
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #edf2f4;
+      border: 2px solid #ad2831;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #ad2831;
+      text-align: center;
+    }
+    footer {
+      background-color: #ad2831;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    @media screen and (max-width: 700px) {
+    .navv {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    width: 100%;
+    gap: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+
+  nav a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    flex: 1 0 auto; 
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  nav {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .dis {
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  input,
+  select,
+  #operation,
+  #result,
+  #history,
+  #rslt,
+  #Help,
+  #learnSection {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+
+  .bsc {
+    font-size: 20px; 
+    line-height: 1.4;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px; 
+    padding: 5px;
+  }
+
+  .conv,
+  .cls,
+  .pro,
+  .lrn {
+    padding: 2px 4px;       /* minimal padding */
+    font-size: 11px;        /* small but readable */
+    margin: 0;              /* remove extra margin */
+    flex: 1 0 18%;          /* 5 buttons × ~18% + gap = ~100% */
+    min-width: auto;        /* no fixed width limit */
+    max-width: none;
+    box-sizing: border-box;
+    white-space: nowrap;    /* prevent breaking text */
+    text-align: center;
+  }
+  #rslt button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  top: 0px; /* 👈 THIS is the magic that aligns it vertically */
+  box-sizing: border-box;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  padding:4px;
+}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="bsc">Universal <span style="color: #f7b538;">Conversion</span><span style="font-size: 16px;">.com</span></span>
+  <span style="float:right;">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#privacy">Privacy</a>
+    <a href="index.html#fot">Contact</a>
+  </span>
+</nav>
+
+<div class="content"><section id="about">
+  <h1>About Us</h1>
+  <p>
+    UniversalConversion.com is your all-in-one conversion tool built with simplicity and speed in mind.
+    We help developers, students, and curious minds handle conversions in base systems, encodings, bitwise logic,
+    and more — right from the browser.
+  </p>
+  <p>
+    Our mission is to save you time, reduce repetitive calculation headaches, and keep all your tools in one clean place.
+  </p>
+  <p>
+    Built with ❤ by Suyash L.C — 2025.
+  </p></section>
+</div>
+<div class="content"><section id="privacy">
+  <h1>Privacy Policy</h1>
+  <p>
+    We value your privacy. This site does not collect any personally identifiable information.
+  </p>
+  <p>
+    Local data like conversion history is stored only in your browser (via localStorage) and never sent to any server.
+  </p>
+  <p>
+    If you contact us, your email is used solely for responding to your message and is not stored or shared.
+  </p>
+  <p>
+    We do not use third-party analytics, cookies, or trackers.
+  </p></section>
+</div>
+<div class="content"><section id="terms">
+  <h1>Terms and Conditions</h1>
+  <p>
+    By using UniversalConversion.com, you agree to the following terms and conditions. If you do not agree with any part of these terms, please do not use the site.
+  </p>
+
+  <h2>1. Use of the Site</h2>
+  <p>
+    This site is intended for educational and utility purposes only. It provides tools for number base conversions, bitwise operations, arithmetic, and other scientific calculations.
+  </p>
+
+  <h2>2. No Warranties</h2>
+  <p>
+    While we strive for accuracy, UniversalConversion.com is provided “as is” without any warranties of any kind, express or implied. We make no guarantees regarding the accuracy, reliability, or completeness of any results generated by the tools.
+  </p>
+
+  <h2>3. Limitation of Liability</h2>
+  <p>
+    Under no circumstances shall UniversalConversion.com or its creators be liable for any direct, indirect, incidental, or consequential damages arising out of your use of the site or the tools provided.
+  </p>
+
+  <h2>4. Personal Data</h2>
+  <p>
+    We do not collect personal data. All computations happen locally in your browser, and any history or saved data is stored in your local storage only.
+  </p>
+
+  <h2>5. User Responsibility</h2>
+  <p>
+    You are responsible for verifying the correctness of results before using them in academic, professional, or real-world contexts. Always cross-check critical calculations.
+  </p>
+
+  <h2>6. Modifications</h2>
+  <p>
+    We reserve the right to update these terms at any time. Continued use of the site after changes constitutes acceptance of the updated terms.
+  </p>
+</section></div>
+
+<footer>
+  &copy; Suyash L.C | 2025 | All rights reserved.
+</footer>
+
+</body>
+</html>

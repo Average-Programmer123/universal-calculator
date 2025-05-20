@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi Converter Tool</title>
+  <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" type="image/x-icon">
+    <meta property="og:title" content="Universal Convrter" />
+    <meta property="og:description" content="Have trouble converting number systems, Roman numbers or other Scientific calculations? Our site will help with that. Click this link to do it." />
+    <meta property="og:image" content="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" />
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Number system converter" />
+    <meta name="twitter:description" content="Have trouble converting number systems, Roman numbers or Scientific symbols? Our site will help with that. Click this link to do it." />
+    <meta name="twitter:image" content="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" />
+    <meta name="google-adsense-account" content="ca-pub-6782733985170777">
+    <meta name="google-adsense-account" content="ca-pub-8331324675332828">
+    <meta name="google-site-verification" content="VtqanRWNr97xDoCNt1jOmxNSs32tBAF1QWXhJg_tVQQ" />
+    <meta name="description" content="This site converts from Decimal to Binary, Hexadecimal and Octal. Except for that it can convert text to reverse ASCII and binary. Enjoy!">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="author" content="Suyash Lamichhane">
+    <meta name="copyright" content="© 2025 Suyash Lamichhane">
+  <style>
+    nav {
+      background-color: #ad2831;
+      margin: 0px;
+      padding: 5px;
+    }
+    .bsc {
+      font-family: "Cascadia Code";
+      margin: 0;
+      font-size: 35px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding-right: 20px;
+      font-size: 20px;
+    }
+    .navv {
+      float: right;
+      padding-top: 10px;
+    }
+    body {
+      margin: 0px;
+      font-family: "Josefin Sans";
+      background-color: white;
+    }
+    nav a:hover {
+      color: #f7b538;
+    }
+    .dis {
+      display: inline-block;
+      background-color: #edf2f4;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 40px;
+    }
+    input, select {
+      padding: 8px;
+      margin: 10px 0;
+      width: 90%;
+    }
+    .conv, .cls, .pro, .lrn {
+      padding: 7px 13.5px;
+      margin-top: 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+    .conv { background-color: #7ec4a9; }
+    .cls { background-color: #ad2831; }
+    .pro { background-color: #2d83a6; }
+    .lrn { background-color: #2A7F62; }
+    button:hover {
+      background-color: #f7b538;
+      color: black;
+    }
+    #result{
+  margin-top: 15px;
+  padding: 12px;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  white-space: pre-wrap;
+  width: 94%;
+  margin: 15px auto 0 auto;
+  box-sizing: border-box;
+  
+  /* Add this for alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-container {
+  width: 94%;
+  margin: 0 auto;
+}
+
+#Help {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: 2px solid #ad2831;
+  background-color: #fefefe;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.3s ease;
+  width: 100%; /* Matches input width if they are 100% inside the container */
+}
+
+#Help p:first-child {
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  color: #ad2831;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#Help p#hpp {
+  display: none;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #444;
+  padding-top: 10px;
+}
+
+#chevron {
+  transition: transform 0.3s ease;
+}
+
+#chevron.rotate {
+  transform: rotate(180deg);
+}
+
+    #history {
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ad2831;
+      max-height: 200px;
+      overflow-y: auto;
+      text-align: left;
+      font-size: 14px;
+    }
+    #operation {
+      width: 425px;
+    }
+    #result, #history {
+      width: 94%;
+      margin: 15px auto 0 auto;
+      box-sizing: border-box;
+    }
+    #learnSection {
+      display: none;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      max-width: 90%;
+      font-size: 15px;
+      text-align: left;
+    }
+    #learnSection button {
+      float: right;
+      background: #ad2831;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  background-color: #ad2831;
+  font-family: "Josefin Sans";
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+#rslt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  margin: 15px auto 0 auto;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#resultText {
+  flex: 1;
+  padding-right: 10px;
+}
+
+#rslt button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  top: 7px; /* 👈 THIS is the magic that aligns it vertically */
+  box-sizing: border-box;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  padding:4px;
+}
+
+#rslt button svg {
+  width: 16px;
+  height: 16px;
+  color: #ad2831;
+}
+#chevron{
+  background-color: none;
+}
+@media screen and (max-width: 700px) {
+    .navv {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    width: 100%;
+    gap: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+
+  nav a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    flex: 1 0 auto; 
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  nav {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .dis {
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  input,
+  select,
+  #operation,
+  #result,
+  #history,
+  #rslt,
+  #Help,
+  #learnSection {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+
+  .bsc {
+    font-size: 20px; 
+    line-height: 1.4;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px; 
+    padding: 5px;
+  }
+
+  .conv,
+  .cls,
+  .pro,
+  .lrn {
+    padding: 2px 4px;       /* minimal padding */
+    font-size: 11px;        /* small but readable */
+    margin: 0;              /* remove extra margin */
+    flex: 1 0 18%;          /* 5 buttons × ~18% + gap = ~100% */
+    min-width: auto;        /* no fixed width limit */
+    max-width: none;
+    box-sizing: border-box;
+    white-space: nowrap;    /* prevent breaking text */
+    text-align: center;
+  }
+  #rslt button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  top: 0px; /* 👈 THIS is the magic that aligns it vertically */
+  box-sizing: border-box;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  padding:4px;
+}
+}
+  </style>
+</head>
+<body>
+<nav>
+  <span title="Universal Converter" class="bsc">
+    <b><k style="color:white; padding-left:50px;">Universal</k> <j style="color: #f7b538;">Conversion<j><m style="color: #f7b538; font-size:19px;">.com</m></b>
+  </span>
+  <span class="navv">
+    <a href="index.html">Home</a>
+    <a href="about_policy.html">About</a>
+    <a href="about_policy.html#privacy">Privacy</a>
+    <a href="#fot">Contact</a>
+  </span>
+</nav>
+<div class="wrapper">
+<div class="main-content">
+  <div class="dis">
+    <h3>Universal Converter</h3>
+    <input type="text" id="inputValue" placeholder="Select an operation and give input.">
+    <select id="operation">
+      <option value="">-------------------------- Select Operation --------------------------</option>
+      <optgroup label="Base Conversions">
+        <option value="dec2bin">--Decimal to Binary--</option>
+        <option value="bin2dec">--Binary to Decimal--</option>
+        <option value="dec2hex">--Decimal to Hex--</option>
+        <option value="hex2dec">--Hex to Decimal--</option>
+        <option value="bin2hex">--Binary to Hex--</option>
+        <option value="hex2bin">--Hex to Binary--</option>
+        <option value="dec2oct">--Decimal to Octal--</option>
+        <option value="oct2dec">--Octal to Decimal--</option>
+      </optgroup>
+      <optgroup label="Text & ASCII">
+        <option value="ascii2char">--ASCII to Character--</option>
+        <option value="char2ascii">--Character to ASCII--</option>
+        <option value="text2bin">--Text to Binary--</option>
+        <option value="revAscii">--Reverse ASCII Codes--</option>
+        <option value="reverseText">--Reverse Text--</option>
+      </optgroup>
+      <optgroup label="Roman & Scientific">
+        <option value="rom2dec">Roman to Decimal</option>
+        <option value="dec2rom">Decimal to Roman</option>
+        <option value="sci">To Scientific Notation</option>
+      </optgroup>
+      <optgroup label="Math Tools">
+        <option value="calc">Basic Arithmetic</option>
+        <option value="factorial">Factorial (n!)</option>
+        <option value="power">Power (x^y)</option>
+        <option value="len">String Length</option>
+      </optgroup>
+      <optgroup label="Bitwise & Bitshift">
+        <option value="and">Bitwise AND (a & b)</option>
+        <option value="or">Bitwise OR (a | b)</option>
+        <option value="xor">Bitwise XOR (a ^ b)</option>
+        <option value="not">Bitwise NOT (~a)</option>
+        <option value="shl">Left Shift (a << b)</option>
+        <option value="shr">Right Shift (a >> b)</option>
+      </optgroup>
+      <optgroup label="Arithmetic (Base-specific)">
+  <option value="addBin">Binary Addition</option>
+  <option value="subBin">Binary Subtraction</option>
+  <option value="addHex">Hex Addition</option>
+  <option value="subHex">Hex Subtraction</option>
+  <option value="addOct">Octal Addition</option>
+  <option value="subOct">Octal Subtraction</option>
+</optgroup>
+  <optgroup label="Encoding/Decoding">
+          <option value="base64">Base64 Encode/Decode</option>
+          <option value="url">URL Encode/Decode</option>
+          <option value="html">HTML Entities Encode/Decode</option>
+          <option value="hex">Hex Encode/Decode</option>
+          <option value="morse">Morse Code Encode/Decode</option>
+          <option value="rot13">ROT13 Encode/Decode</option>
+        </optgroup>
+    </select>
+    <div class="btn-group">
+    <button onclick="convert()" class="conv">Convert</button>
+    <button onclick="clearinp()" class="cls">Clear</button>
+    <button onclick="exportHistory()" class="pro">Export History</button>
+    <button onclick="clearHistory()" class="cls">Clear History</button>
+    <button onclick="showLearn()" class="lrn">Learn</button>
+    </div>
+    <div id="rslt">
+      <button onclick="copyResult()" style="float:right; margin-left:10px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
+      <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1z"/>
+      <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5"/>
+    </svg>
+  </button>
+    <div id="result">
+  <span id="resultText"></span>
+</div></div>
+
+    <div id="history">Conversion History</div>
+    <div id="learnSection">
+      <button onclick="document.getElementById('learnSection').style.display='none'">Close</button>
+      <h4>Learn About the Conversion</h4>
+      <div id="learnContent"></div>
+    </div>
+<div id="Help">
+  <p style="text-align:center; cursor: pointer;" onclick="showHelp()">
+    Help  
+    <svg id="chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+         class="bi bi-chevron-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+    </svg>
+  </p>
+  <div id="hpp" style="text-align: left; display: none; padding: 10px 20px;">
+    <p style="text-align: center;"><strong>How to give Inputs?</strong></p>
+    <ul style="line-height: 1.6;">
+      <li>For operation like Decimal to Binary you need to give a deciml value like 8.</li>
+      <li>But if the input is Binary to decimal then you would need to put in a binary number like 101.</li>
+      <li>Same goes with Hexadecimal to Binary and viceversa.</li>
+      <li>For Text and ASCII convesions you should enter in text otherwise, it doesn't sho any output.</li>
+      <li>For basic arithmetic you can just input 5+5 ,4-1, 10/5 etc. but for factorial you should first put the number you need the factorial of (example:5) and the the "!" symbol.</li>
+      <li>Final input way 5!, 10! etc.</li>
+      <li>Similarly for power you should now put two numbers one base and one exponent (example 2^6, here 2 is he base and 6 is the exponent) and between the base and exponent you should put the "^" symbol.</li>
+      <li>Final input way: 2^6, 5^2, 10^2 etc.</li>
+      <li>String length is basically the character length of a word sentence etc. you can put anytype of letter like hello@123 and it will tell the character length which in ou case is 9.</li>
+      <li>For Bitwise operations you should do it like how it's shown in the select tag (the place you choose the operation) for example for And gate you can put something like a&b.</li>
+      <li>For base specific arithmetic similar to regular arithmetic you can add, subtract etc. but here you should select operation (like Binary Addition, Binary Subtraction) and then give input like 100,100 regardless of addition, subtraction etc.</li>
+      <li>For encode and decode you can encode a number text etc by entering in the text or number you want or to decode you can enter an encoded text or number and the calcluator will do the hard work for you!</li>
+    </ul>
+  </div>
+</div>
+    <p><a href="about_policy.html#terms">Terms and Conditions</a></p>
+</div>
+</div>
+</div>
+<script>
+  function convert() {
+  const val = document.getElementById('inputValue').value.trim();
+  const op = document.getElementById('operation').value;
+  let result = '';
+
+  if (!op) {
+    document.getElementById('resultText').innerText = "Please select an operation.";
+    return;
+  }
+
+  try {
+    switch (op) {
+      case 'addBin': case 'subBin': {
+        const [a, b] = val.split(',').map(v => parseInt(v.trim(), 2));
+        const res = op === 'addBin' ? a + b : a - b;
+        result = res.toString(2);
+        break;
+      }
+      case 'addHex': case 'subHex': {
+        const [a, b] = val.split(',').map(v => parseInt(v.trim(), 16));
+        const res = op === 'addHex' ? a + b : a - b;
+        result = res.toString(16).toUpperCase();
+        break;
+      }
+      case 'addOct': case 'subOct': {
+        const [a, b] = val.split(',').map(v => parseInt(v.trim(), 8));
+        const res = op === 'addOct' ? a + b : a - b;
+        result = res.toString(8);
+        break;
+      }
+
+      case 'dec2bin': result = parseInt(val).toString(2); break;
+      case 'bin2dec': result = parseInt(val, 2).toString(10); break;
+      case 'dec2hex': result = parseInt(val).toString(16).toUpperCase(); break;
+      case 'hex2dec': result = parseInt(val, 16).toString(10); break;
+      case 'bin2hex': result = parseInt(val, 2).toString(16).toUpperCase(); break;
+      case 'hex2bin': result = parseInt(val, 16).toString(2); break;
+      case 'dec2oct': result = parseInt(val).toString(8); break;
+      case 'oct2dec': result = parseInt(val, 8).toString(10); break;
+
+      case 'ascii2char': result = String.fromCharCode(parseInt(val)); break;
+      case 'char2ascii': result = val.charCodeAt(0); break;
+      case 'text2bin': result = val.split('').map(c => c.charCodeAt(0).toString(2).padStart(8, '0')).join(' '); break;
+      case 'revAscii': result = val.split('').map(c => c.charCodeAt(0)).reverse().join(' '); break;
+      case 'reverseText': result = val.split('').reverse().join(''); break;
+
+      case 'rom2dec': result = romanToDecimal(val.toUpperCase()); break;
+      case 'dec2rom': result = decimalToRoman(parseInt(val)); break;
+
+      case 'sci': result = Number(val).toExponential(); break;
+      case 'calc': result = eval(val); break;
+      case 'factorial': result = factorial(parseInt(val)); break;
+      case 'power': {
+        const [base, exponent] = val.split('^').map(Number);
+        result = Math.pow(base, exponent);
+        break;
+      }
+
+      case 'len': result = `Length: ${val.length}`; break;
+
+      case 'and': case 'or': case 'xor': case 'shl': case 'shr': {
+        const [a, b] = val.split(',').map(n => parseInt(n.trim()));
+        const ops = { and: '&', or: '|', xor: '^', shl: '<<', shr: '>>' };
+        result = eval(`${a} ${ops[op]} ${b}`);
+        break;
+      }
+
+      case 'not': {
+        const n = parseInt(val.trim());
+        result = ~n;
+        break;
+      }
+
+      // ✅ Encoding/Decoding (now correctly integrated)
+      case 'base64': result = base64EncodeDecode(val); break;
+      case 'url': result = urlEncodeDecode(val); break;
+      case 'html': result = htmlEntitiesEncodeDecode(val); break;
+      case 'hex': result = hexEncodeDecode(val); break;
+      case 'morse': result = morseEncodeDecode(val); break;
+      case 'rot13': result = rot13EncodeDecode(val); break;
+
+      default: result = "Invalid operation.";
+    }
+  } catch (e) {
+    result = "Error: " + e.message;
+  }
+
+  document.getElementById('resultText').innerText = result;
+  updateHistory(op, val, result);
+}
+
+
+  function updateHistory(op, val, result) {
+    let history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    const entry = `${new Date().toLocaleString()} | ${op}: ${val} → ${result}`;
+    history.unshift(entry);
+    history = history.slice(0, 20);
+    localStorage.setItem('conversionHistory', JSON.stringify(history));
+    displayHistory();
+  }
+
+  function displayHistory() {
+    const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    document.getElementById('history').innerHTML = `
+      <h4>Conversion History</h4>
+      <ul>${history.map(item => `<li>${item}</li>`).join('')}</ul>
+    `;
+  }
+
+  function exportHistory() {
+    const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    if (history.length === 0) {
+      alert("No history to export.");
+      return;
+    }
+    const blob = new Blob([history.join('\n')], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'conversion_history.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function clearHistory() {
+    localStorage.removeItem('conversionHistory');
+    displayHistory();
+  }
+
+  function clearinp() {
+    document.getElementById('inputValue').value = '';
+    document.getElementById('result').innerText = "";
+  }
+
+  function romanToDecimal(roman) {
+    const map = {I:1, V:5, X:10, L:50, C:100, D:500, M:1000};
+    let total = 0, prev = 0;
+    for (let i = roman.length - 1; i >= 0; i--) {
+      const curr = map[roman[i]];
+      total += (curr < prev) ? -curr : curr;
+      prev = curr;
+    }
+    return total;
+  }
+
+  function decimalToRoman(num) {
+    const map = [
+      {val:1000, sym:'M'}, {val:900, sym:'CM'}, {val:500, sym:'D'}, {val:400, sym:'CD'},
+      {val:100, sym:'C'}, {val:90, sym:'XC'}, {val:50, sym:'L'}, {val:40, sym:'XL'},
+      {val:10, sym:'X'}, {val:9, sym:'IX'}, {val:5, sym:'V'}, {val:4, sym:'IV'}, {val:1, sym:'I'}
+    ];
+    let res = '';
+    for (let i = 0; i < map.length; i++) {
+      while (num >= map[i].val) {
+        res += map[i].sym;
+        num -= map[i].val;
+      }
+    }
+    return res;
+  }
+
+  function factorial(n) {
+    if (n < 0) return "Undefined";
+    if (n === 0) return 1;
+    let f = 1;
+    for (let i = 1; i <= n; i++) f *= i;
+    return f;
+  }
+function copyResult() {
+  const text = document.getElementById("resultText").innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Result copied to clipboard!");
+  }).catch(err => {
+    alert("Failed to copy text: " + err);
+  });
+}
+
+  function showLearn() {
+    const op = document.getElementById('operation').value;
+    const learnBox = document.getElementById('learnSection');
+    const content = document.getElementById('learnContent');
+
+const learnTexts = {
+  "dec2bin": "Converts a base-10 number into base-2.\nProcess: Repeatedly divide the number by 2, record the remainders, and reverse the result.\nExample: 10 → 1010\nUse: Used in digital logic and microprocessor design.",
+  
+  "bin2dec": "Converts binary (base-2) into decimal (base-10).\nProcess: Multiply each bit by 2^position (from right to left) and sum.\nExample: 1101 → 13\nUse: Reading machine-level binary data.",
+  
+  "dec2hex": "Converts decimal numbers into hexadecimal (base-16).\nProcess: Divide by 16, map remainders (10–15 to A–F), reverse result.\nExample: 255 → FF\nUse: Color codes in CSS, memory addresses.",
+  
+  "hex2dec": "Converts hexadecimal into decimal.\nProcess: Convert each digit to decimal, multiply by 16^position, sum.\nExample: 1A → 26\nUse: Interpreting low-level data or debugging.",
+  
+  "bin2hex": "Converts binary data into hexadecimal.\nProcess: Group binary digits in sets of 4 and convert to hex.\nExample: 11110000 → F0\nUse: Compact binary representation.",
+  
+  "hex2bin": "Converts hexadecimal into binary format.\nProcess: Convert each hex digit to a 4-bit binary equivalent.\nExample: A3 → 10100011\nUse: Network packets, memory dumps.",
+  
+  "dec2oct": "Converts decimal into octal (base-8).\nProcess: Repeatedly divide by 8, store remainders, reverse result.\nExample: 64 → 100\nUse: Unix file permissions.",
+  
+  "oct2dec": "Converts octal numbers into decimal.\nProcess: Multiply each digit by 8^position, sum the results.\nExample: 77 → 63\nUse: Understanding chmod permissions.",
+  
+  "ascii2char": "Maps numeric ASCII codes to their character equivalents.\nProcess: Convert integer to character using ASCII table.\nExample: 65 → A\nUse: Serial communication, encoding.",
+  
+  "char2ascii": "Maps characters to their ASCII numeric values.\nProcess: Use ASCII table to convert character to number.\nExample: A → 65\nUse: Encryption, parsing.",
+  
+  "text2bin": "Converts text to 8-bit binary using ASCII values.\nProcess: Convert each character to ASCII, then to 8-bit binary.\nExample: 'Hi' → 01001000 01101001\nUse: Encoding data for transmission.",
+  
+  "revAscii": "Outputs reversed ASCII values of characters.\nProcess: Convert characters to ASCII, then reverse the array.\nExample: 'AB' → [66, 65]\nUse: Obfuscation, puzzles.",
+  
+  "reverseText": "Reverses the input string.\nProcess: Reverse character array of the string.\nExample: 'hello' → 'olleh'\nUse: Word games, text manipulation.",
+  
+  "rom2dec": "Translates Roman numerals to standard numbers.\nProcess: Traverse left-to-right, subtract smaller values before larger ones.\nExample: XLII → 42\nUse: Parsing historic data, watch dials.",
+  
+  "dec2rom": "Converts numbers to Roman numeral format.\nProcess: Match highest Roman values subtractively (e.g., 90 → XC).\nExample: 99 → XCIX\nUse: Formatting dates, chapters.",
+  
+  "sci": "Displays number in scientific (exponential) notation.\nProcess: Shift decimal point to normalize, record exponent.\nExample: 123456 → 1.23456e+5\nUse: Scientific calculators, physics.",
+  
+  "calc": "Evaluates math expressions.\nProcess: Use standard operator precedence (PEMDAS/BODMAS).\nExample: 4*(3+2) → 20\nUse: Any mathematical computation.",
+  
+  "factorial": "Returns factorial of a number.\nProcess: Multiply descending values from n to 1.\nExample: 5! → 120\nUse: Probability, permutations.",
+  
+  "power": "Raises a number to a power.\nProcess: Multiply base by itself exponent times.\nExample: 2^3 → 8\nUse: Scientific computation, interest calculations.",
+  
+  "len": "Counts characters in the input string.\nProcess: Count all characters, including whitespace.\nExample: 'apple' → 5\nUse: Data validation, text analysis.",
+  
+  "and": "Performs bitwise AND between two integers.\nProcess: Compare bits, result is 1 if both bits are 1.\nExample: 6 & 3 → 2\nUse: Flag masking in settings.",
+  
+  "or": "Performs bitwise OR between two integers.\nProcess: Compare bits, result is 1 if either bit is 1.\nExample: 4 | 1 → 5\nUse: Setting configuration bits.",
+  
+  "xor": "Performs bitwise XOR between two integers.\nProcess: Compare bits, result is 1 if bits are different.\nExample: 5 ^ 3 → 6\nUse: Simple encryption, error detection.",
+  
+  "not": "Performs bitwise NOT (1's complement).\nProcess: Flip each bit in the binary representation.\nExample: ~5 → -6\nUse: Inverting binary values.",
+  
+  "shl": "Bit-shifts a number left.\nProcess: Move bits left, fill with zeros.\nExample: 3 << 2 → 12\nUse: Fast multiplication by powers of 2.",
+  
+  "shr": "Bit-shifts a number right.\nProcess: Move bits right, discard least significant bits.\nExample: 8 >> 1 → 4\nUse: Fast division by powers of 2.",
+  
+  "gcd": "Finds greatest common divisor.\nProcess: Use Euclidean algorithm.\nExample: gcd(48, 18) → 6\nUse: Simplifying fractions, cryptography.",
+  
+  "lcm": "Finds least common multiple.\nProcess: lcm = (a × b) / gcd(a, b)\nExample: lcm(4, 5) → 20\nUse: Timetable alignment, scheduling.",
+  
+  "primeCheck": "Checks if a number is prime.\nProcess: Test for divisibility up to √n.\nExample: 7 → true\nUse: Security algorithms, number theory.",
+  
+  "isEven": "Checks if number is divisible by 2.\nProcess: num % 2 == 0\nExample: 8 → true\nUse: Loop optimizations, parity checks.",
+  
+  "isOdd": "Checks if number is not divisible by 2.\nProcess: num % 2 != 0\nExample: 5 → true\nUse: Conditional flows, counting logic.",
+  
+  "toUpper": "Converts text to uppercase.\nProcess: Map each letter to uppercase using ASCII offset.\nExample: 'abc' → 'ABC'\nUse: Normalizing input.",
+  
+  "toLower": "Converts text to lowercase.\nProcess: Map each letter to lowercase using ASCII offset.\nExample: 'HELLO' → 'hello'\nUse: Case-insensitive search.",
+  
+  "stripSpaces": "Removes all spaces.\nProcess: Replace all space characters with '' (empty string).\nExample: 'a b c' → 'abc'\nUse: Data cleaning.",
+  
+  "countWords": "Counts the number of words in a string.\nProcess: Split string by whitespace and count.\nExample: 'I love coding' → 3\nUse: Text analysis.",
+  
+  "palindromeCheck": "Checks if a string reads the same backward.\nProcess: Compare original string to its reverse.\nExample: 'madam' → true\nUse: Games, coding challenges.",
+  
+  "randomInt": "Generates a random integer in a range.\nProcess: Use Math.random(), scale and floor the result.\nExample: Between 1–10 → 7\nUse: Simulations, games.",
+  
+  "round": "Rounds number to nearest integer.\nProcess: Check fractional part and round accordingly.\nExample: 4.6 → 5\nUse: Financial calculations.",
+  
+  "ceil": "Rounds number up.\nProcess: Always round up to nearest integer.\nExample: 2.1 → 3\nUse: Pagination, layout design.",
+  
+  "floor": "Rounds number down.\nProcess: Always round down to nearest integer.\nExample: 5.8 → 5\nUse: Counting units, loops.",
+  
+  "base64": "Encodes binary or text data into Base64 format.\nProcess: Divide input into 6-bit groups, map to Base64 characters.\nExample: 'Hello' → 'SGVsbG8='\nUse: Embedding images in HTML/CSS, email attachments.",
+  
+  "url": "Encodes or decodes special characters in URLs.\nProcess: Replace unsafe ASCII characters with '%' followed by two hex digits.\nExample: 'Hello World' → 'Hello%20World'\nUse: Web addresses, query strings.",
+  
+  "html": "Encodes or decodes special HTML characters.\nProcess: Convert characters like <, >, & into HTML-safe entities.\nExample: '<' → '&lt;'\nUse: Preventing HTML injection, displaying raw code.",
+  
+  "hex": "Encodes text into hexadecimal or decodes hex to text.\nProcess: Convert each character to its ASCII code in hex.\nExample: 'A' → '41'\nUse: Encoding low-level data, debugging.",
+  
+  "morse": "Encodes text into Morse code or decodes Morse code into text.\nProcess: Map letters/numbers to dot-dash patterns.\nExample: 'SOS' → '... --- ...'\nUse: Radio, military communication, puzzles.",
+  
+  "rot13": "Encodes/decodes text by shifting letters 13 positions in the alphabet.\nProcess: ROT13 is its own inverse.\nExample: 'hello' → 'uryyb'\nUse: Simple obfuscation, puzzles, forums."
+
+};
+
+
+    if (!op || !learnTexts[op]) {
+      content.innerHTML = "Please select a valid conversion operation to learn about.";
+    } else {
+      content.innerHTML = `<b>${document.querySelector(`#operation option[value="${op}"]`).textContent}</b><br>${learnTexts[op]}`;
+    }
+
+    learnBox.style.display = "block";
+  }
+function base64EncodeDecode(input) {
+  try {
+    // Try to decode the input. If it fails, it is not Base64, so we need to encode it
+    let decoded = atob(input); // Try decoding the input
+    return btoa(decoded); // If decoding is successful, re-encode it (i.e., Base64 decoding is working)
+  } catch (e) {
+    // If decoding fails, assume input is plain text and encode it
+    return btoa(input); // Encode to Base64 if the input is plain text
+  }
+}
+
+  // URL Encode/Decode
+  function urlEncodeDecode(input) {
+    try {
+      // Try decoding, if error occurs then it's encoding
+      return decodeURIComponent(input);
+    } catch (e) {
+      return encodeURIComponent(input); // Encode
+    }
+  }
+
+  // HTML Entities Encode/Decode
+  function htmlEntitiesEncodeDecode(input) {
+    const element = document.createElement('div');
+    element.innerText = input;
+    const encoded = element.innerHTML;
+
+    element.innerHTML = input;
+    const decoded = element.innerText;
+
+    return input === decoded ? encoded : decoded;
+  }
+
+  // Hex Encode/Decode
+  function hexEncodeDecode(input) {
+    let result = "";
+    if (/^[0-9A-Fa-f]+$/.test(input)) {
+      result = input.match(/.{1,2}/g).map(byte => String.fromCharCode(parseInt(byte, 16))).join('');
+    } else {
+      result = input.split('').map(c => c.charCodeAt(0).toString(16)).join('');
+    }
+    return result;
+  }
+
+  // Morse Encode/Decode
+  function morseEncodeDecode(input) {
+    const morseCode = {
+      "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".", "F": "..-.",
+      "G": "--.", "H": "....", "I": "..", "J": ".---", "K": "-.-", "L": ".-..",
+      "M": "--", "N": "-.", "O": "---", "P": ".--.", "Q": "--.-", "R": ".-.",
+      "S": "...", "T": "-", "U": "..-", "V": "...-", "W": ".--", "X": "-..-",
+      "Y": "-.--", "Z": "--..", "1": ".----", "2": "..---", "3": "...--", "4": "....-",
+      "5": ".....", "6": "-....", "7": "--...", "8": "---..", "9": "----.", "0": "-----",
+      " ": "/"
+    };
+    let result = "";
+    input.split('').forEach((char) => {
+      if (morseCode[char.toUpperCase()]) {
+        result += morseCode[char.toUpperCase()] + " ";
+      }
+    });
+    return result.trim();
+  }
+
+  // ROT13 Encode/Decode
+  function rot13EncodeDecode(input) {
+    return input.replace(/[a-zA-Z]/g, (char) => {
+      const code = char.charCodeAt(0);
+      const shift = (code <= 90) ? 65 : 97;
+      return String.fromCharCode(((code - shift + 13) % 26) + shift);
+    });
+  }
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const messageBox = document.getElementById('formMessage');
+
+  fetch('/send-message', {
+    method: 'POST',
+    body: data
+  }).then(res => res.json()).then(data => {
+    if (data.success) {
+      messageBox.innerText = "✅ Message sent!";
+      form.reset();
+    } else {
+      messageBox.innerText = "❌ Error: " + (data.error || "Unknown error");
+    }
+  }).catch(() => {
+    messageBox.innerText = "❌ Network error.";
+  });
+});
+ function showHelp() {
+    const helpPara = document.getElementById("hpp");
+    if (helpPara) {
+      helpPara.style.display = helpPara.style.display === "none" ? "block" : "none";
+    }
+  }
+
+  window.onload = function () {
+    const helpPara = document.getElementById("hpp");
+    if (helpPara) {
+      helpPara.style.display = "none"; // hide by default
+    }
+
+    displayHistory(); // keep your history logic
+  };
+</script>
+</div>
+<section id="fot" class="fot" name="fot">
+<footer style="background-color: #ad2831; font-family: 'Josefin Sans'; color: white; padding: 30px 20px;">
+  <div style="text-align: center; margin-bottom: 20px; font-size: 16px;">
+    &copy; Suyash L.C | 2025 | All rights reserved.
+  </div>
+
+  <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; background-color: white; color: black; padding: 25px 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <!-- Contact Form - Left -->
+
+    <!-- Social Links - Right -->
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-top: 0; color: #ad2831;">Connect With Me</h3>
+      <p>Email: <a href="mailto:dotpy9579@gmail.com" style="color: #ad2831;">dotpy9579@gmail.com</a></p>
+      <p>
+        <a href="https://github.com/Average-Programmer123" target="_blank" style="color: #ad2831; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;"> GitHub
+        </a>
+      </p>
+      <p>
+        <a href="https://www.youtube.com/channel/yourchannelid" target="_blank" style="color: #ad2831; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" style="width: 20px; vertical-align: middle; margin-right: 5px;"> YouTube
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+</section>
+</body>
+</html>
