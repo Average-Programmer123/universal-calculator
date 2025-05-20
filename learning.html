@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn | Universal Calculator</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to original site CSS -->
+     <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Matches original nav bar style */
+        nav {
+            background-color: red;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            color: yellow;
+        }
+
+        code {
+            background-color: #222;
+            padding: 3px 6px;
+            color: red;
+            border-radius: 3px;
+        }
+
+        .example {
+            background-color: #111;
+            border: 1px solid red;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 5px solid yellow;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #111;
+            color: white;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid red;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: red;
+            color: white;
+        }
+
+        a {
+            color: yellow;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="learning.html">Learn</a>
+    </nav>
+
+    <div class="content">
+        <h1>📘 Learn About Number Systems</h1>
+        <p>Welcome to the learning section of the <strong>Universal Calculator</strong>. Here you’ll understand how different number systems work, especially <strong>Decimal</strong> and <strong>Binary</strong>, and how to convert between them.</p>
+
+     <div class="content">
+    <h1>📘 Learn About Number Systems</h1>
+    <p>Welcome to the learning section of the <strong>Universal Calculator</strong>. This section is designed to help you understand how various number systems and computer-based operations work. From binary to Roman numerals, and from ASCII to Base64, you'll learn how to think like a computer!</p>
+
+    <h2>🔢 Decimal (Base-10)</h2>
+    <p>The decimal system is the standard number system used around the world. It is called base-10 because it uses ten digits (0–9). Each digit's position is weighted by powers of 10, increasing from right to left.</p>
+    <p>This positional system makes arithmetic easier and forms the basis of most everyday calculations.</p>
+
+    <div class="example">
+        Example: <code>452</code><br>
+        = 4 × 100 + 5 × 10 + 2 × 1<br>
+        = 4 × 10² + 5 × 10¹ + 2 × 10⁰ = <strong>452</strong>
+    </div>
+         <ul>
+        <li>Use of <strong>Decimal System (Base-10):</strong>
+            <ul>
+                <li>Used in everyday counting, measurements, and financial transactions.</li>
+                <li>Standard system taught in schools worldwide.</li>
+                <li>Used in calculators, clocks, and most human-readable number formats.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>⚙️ Binary (Base-2)</h2>
+    <p>Binary numbers are used by computers and digital devices because they only have two states: on and off, represented by 1 and 0. Each binary digit (bit) represents a power of 2, starting from the rightmost digit.</p>
+    <p>This simplicity allows complex processing to be built from basic logical rules.</p>
+
+    <div class="example">
+        Binary: <code>1011</code><br>
+        = 1 × 8 + 0 × 4 + 1 × 2 + 1 × 1<br>
+        = 1 × 2³ + 0 × 2² + 1 × 2¹ + 1 × 2⁰<br>
+        = <strong>11 in Decimal</strong>
+    </div>
+
+    <h2>🔄 Convert Decimal to Binary</h2>
+    <p>Converting decimal to binary involves dividing the number by 2 and tracking the remainders. These remainders, when read in reverse, give the binary equivalent.</p>
+    <p>This method is known as successive division and is a fundamental concept in computer science education.</p>
+
+    <div class="example">
+        Convert <strong>13</strong> to binary:<br>
+        13 ÷ 2 = 6 remainder <strong>1</strong><br>
+        6 ÷ 2 = 3 remainder <strong>0</strong><br>
+        3 ÷ 2 = 1 remainder <strong>1</strong><br>
+        1 ÷ 2 = 0 remainder <strong>1</strong><br>
+        → Binary = <strong>1101</strong>
+    </div>
+
+    <h2>🔁 Convert Binary to Decimal</h2>
+    <p>This process uses the positional value of each bit. Multiply each bit by 2 raised to its position index (right to left), then sum them all to get the decimal number.</p>
+    <p>Understanding this helps in grasping how data is stored and manipulated in digital systems.</p>
+
+    <div class="example">
+        Convert <code>1101</code> to decimal:<br>
+        1 × 2³ + 1 × 2² + 0 × 2¹ + 1 × 2⁰ = 8 + 4 + 0 + 1 = <strong>13</strong>
+    </div>
+
+    <h2>📋 Decimal to Binary Table</h2>
+    <p>This table shows the binary equivalents of the first few decimal numbers. Notice how the binary values increase in a pattern, doubling every time a new digit is added.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Decimal</th>
+                <th>Binary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>0</td><td>0000</td></tr>
+            <tr><td>1</td><td>0001</td></tr>
+            <tr><td>2</td><td>0010</td></tr>
+            <tr><td>3</td><td>0011</td></tr>
+            <tr><td>4</td><td>0100</td></tr>
+            <tr><td>5</td><td>0101</td></tr>
+            <tr><td>6</td><td>0110</td></tr>
+            <tr><td>7</td><td>0111</td></tr>
+            <tr><td>8</td><td>1000</td></tr>
+            <tr><td>9</td><td>1001</td></tr>
+            <tr><td>10</td><td>1010</td></tr>
+        </tbody>
+    </table>
+    <ul>
+         <li>Use of <strong>Binary System (Base-2):</strong>
+            <ul>
+                <li>Foundation of all digital electronics and computing systems.</li>
+                <li>Used in programming, networking, and logic gates.</li>
+                <li>Memory storage, image rendering, and digital audio rely on binary encoding.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>🧪 Try It Yourself</h2>
+    <p>Test your understanding by using our <a href="index.html">Universal Calculator</a>. You can input a number and see the conversion live!</p>
+    <ul>
+        <li>Select <strong>Decimal to Binary</strong> from the dropdown menu.</li>
+        <li>Enter any number and click Calculate.</li>
+        <li>Then reverse it using <strong>Binary to Decimal</strong> to confirm your understanding.</li>
+    </ul>
+    <section>
+    <h2>🧮 Hexadecimal (Base-16) & Octal (Base-8)</h2>
+    <p>These number systems are often used in computing for shorthand representation of binary data:</p>
+    <h3>🔷 Hexadecimal (Base-16)</h3>
+    <p>Hexadecimal, or "hex", uses 16 digits: <code>0–9</code> and <code>A–F</code> (where A = 10, B = 11, ..., F = 15). It's widely used in programming, memory addresses, and color codes in web design.</p>
+    <p>Each hex digit represents exactly 4 binary digits (bits), making it a convenient way to express binary numbers.</p>
+
+    <div class="example">
+        Binary: <code>1111 1010</code><br>
+        Grouped: <code>1111</code> = F, <code>1010</code> = A<br>
+        → Hex = <strong>FA</strong><br><br>
+        Hex: <code>2B</code><br>
+        = 2 × 16 + 11 = <strong>43 in Decimal</strong>
+    </div>
+    <ul>
+    <li><strong>Hexadecimal in Daily Life:</strong>
+        <ul>
+            <li>Used in HTML/CSS for color codes (e.g., <code>#FF5733</code>).</li>
+            <li>Memory addresses and machine-level programming.</li>
+            <li>Debugging tools and hexadecimal editors (hex editors).</li>
+            <li>Representing large binary values more compactly.</li>
+        </ul>
+    </li>
+
+    <h3>🟠 Octal (Base-8)</h3>
+    <p>Octal uses digits <code>0–7</code>. It was historically popular in early computing systems and still appears in Unix-style file permissions and digital logic.</p>
+    <p>Each octal digit corresponds to exactly 3 binary bits.</p>
+
+    <div class="example">
+        Binary: <code>110101</code><br>
+        Grouped as 3-bits: <code>110</code> = 6, <code>101</code> = 5<br>
+        → Octal = <strong>65</strong><br><br>
+        Octal: <code>17</code><br>
+        = 1 × 8 + 7 = <strong>15 in Decimal</strong>
+    </div>
+     <li><strong>Octal in Daily Life:</strong>
+        <ul>
+            <li>Unix file permissions (e.g., <code>chmod 755</code>).</li>
+            <li>Digital logic and electronics (especially older systems).</li>
+            <li>Compact representation of binary in embedded systems.</li>
+            <li>Used historically in early computer systems (like PDP-8).</li>
+        </ul>
+    </li>
+</ul>
+    <p>You can use the <a href="index.html">Universal Calculator</a> to convert between Binary, Octal, Decimal, and Hexadecimal values easily.</p>
+</section>
+
+    <h2>🧠 Bitwise & Bit Shift Operations</h2>
+    <p>Bitwise operations are crucial in programming for performance optimization, device control, and encryption. These operations manipulate bits individually using binary logic.</p>
+
+    <ul>
+        <li><strong>AND (&):</strong> True only if both bits are 1.</li>
+        <li><strong>OR (|):</strong> True if either or both bits are 1.</li>
+        <li><strong>XOR (^):</strong> True if the bits are different.</li>
+        <li><strong>NOT (~):</strong> Inverts all bits (1 ↔ 0).</li>
+    </ul>
+
+    <div class="example">
+        5 = <code>0101</code><br>
+        3 = <code>0011</code><br>
+        5 & 3 = <code>0001</code> = 1<br>
+        5 | 3 = <code>0111</code> = 7<br>
+        5 ^ 3 = <code>0110</code> = 6
+    </div>
+    <ul>
+         <li>Use of <strong>Bitwise Operations:</strong>
+            <ul>
+                <li>Optimizing performance in low-level programming (e.g., C, C++).</li>
+                <li>Controlling hardware registers and device drivers.</li>
+                <li>Encryption, compression, and data masking techniques.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>🔀 Bit Shifting</h3>
+    <p>Shifting bits to the left or right moves them by a certain number of positions. This can be used for efficient multiplication or division by powers of two.</p>
+
+    <ul>
+        <li><strong>Left Shift (<<):</strong> Shifts bits left, filling with 0. Equivalent to multiplying by 2 for each shift.</li>
+        <li><strong>Right Shift (>>):</strong> Shifts bits right, discarding bits on the right. Equivalent to integer division by 2 for each shift.</li>
+    </ul>
+
+    <div class="example">
+        6 = <code>0110</code><br>
+        6 << 1 = <code>1100</code> = 12<br>
+        6 >> 1 = <code>0011</code> = 3
+    </div>
+    <ul>
+        <li><strong>Bit Shifting:</strong>
+            <ul>
+                <li>Fast multiplication or division by powers of two.</li>
+                <li>Efficient image processing and mathematical algorithms.</li>
+                <li>Microcontroller and embedded system operations.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>🔤 Text and ASCII Operations</h2>
+    <p>ASCII (American Standard Code for Information Interchange) assigns numeric values to characters. Computers use these values to store and manipulate text.</p>
+
+    <ul>
+        <li><strong>Character to ASCII:</strong> Converts each letter or symbol to its corresponding ASCII code.</li>
+        <li><strong>ASCII to Character:</strong> Converts a numeric ASCII value back into a readable character.</li>
+        <li><strong>Text to Binary:</strong> Shows how characters are represented in binary format.</li>
+        <li><strong>Reverse Text:</strong> Reverses the string letter by letter.</li>
+        <li><strong>Reverse ASCII:</strong> Flips the ASCII codes rather than characters themselves.</li>
+    </ul>
+
+    <div class="example">
+        Text: <code>Hi</code><br>
+        ASCII: H = 72, i = 105<br>
+        Binary: H = 01001000, i = 01101001<br>
+        Reversed: <code>iH</code>
+    </div>
+      <li>Use of <strong>ASCII & Text Operations:</strong>
+            <ul>
+                <li>Text encoding in programming and data transmission.</li>
+                <li>Web development and terminal communications.</li>
+                <li>String manipulation and input validation in software development.</li>
+            </ul>
+        </li>
+    <h2>🏛️ Roman Numerals</h2>
+    <p>Roman numerals use combinations of letters to represent numbers. They follow specific patterns and rules, which are still used today in clocks, outlines, and formal writing.</p>
+
+    <ul>
+        <li><strong>Convert Decimal to Roman:</strong> Break the decimal into components that match Roman numeral values.</li>
+        <li><strong>Convert Roman to Decimal:</strong> Add or subtract values based on Roman numeral placement rules.</li>
+    </ul>
+
+    <div class="example">
+        Decimal: <code>58</code><br>
+        Roman: <code>LVIII</code><br>
+        (L = 50, V = 5, III = 3)
+    </div>
+    <ul>
+         <li><strong>Roman Numerals:</strong>
+            <ul>
+                <li>Used in clocks, book chapters, and movie titles (e.g., Rocky IV).</li>
+                <li>Stylized number representation in monuments and historical texts.</li>
+                <li>Formal numbering in legal documents and outlines.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>🧪 Scientific Operations</h2>
+    <p>These operations support more complex mathematical computations useful in science and engineering.</p>
+
+    <ul>
+        <li><strong>Factorial (n!):</strong> Useful in probability and statistics. Calculates the product of all positive integers up to <code>n</code>.</li>
+        <li><strong>Power (x<sup>y</sup>):</strong> Used to calculate exponential values.</li>
+        <li><strong>String Length:</strong> Measures how many characters are in a word or sentence, useful in data validation.</li>
+    </ul>
+    <li>Use of <strong>Scientific Operations (Factorial, Power, etc.):</strong>
+            <ul>
+                <li>Used in mathematics, physics, and engineering equations.</li>
+                <li>Factorials appear in probability, permutations, and combinatorics.</li>
+                <li>Power functions are used in exponential growth models and signal processing.</li>
+            </ul>
+        </li>
+    <h2>🧮 Binary Arithmetic</h2>
+    <p>Just like regular math, binary addition and subtraction follow logical rules. Carrying and borrowing work similarly to the decimal system, but only with 0s and 1s. It's more efficient to first convert the binary to decimal and then andd the terms and convert the final number to binary.</p>
+
+    <ul>
+        <li><strong>Addition:</strong> Add bits from right to left, carrying when needed.</li>
+        <li><strong>Subtraction:</strong> Subtract bits with borrowing if the top bit is smaller than the bottom bit.</li>
+    </ul>
+
+    <div class="example">
+        1011 (11 in decimal) + 0101 (5 in decimal) = <code>10000</code> (16) = 16 in decimal
+    </div>
+    <ul>
+          <li>Use of <strong>Binary Arithmetic:</strong>
+            <ul>
+                <li>Core to processor design and CPU logic operations.</li>
+                <li>Arithmetic circuits in digital calculators and computing devices.</li>
+                <li>Used in error detection algorithms and data encoding.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>🔐 Encoding & Decoding</h2>
+    <p>Encoding transforms information into different formats for safe transmission or storage. Decoding reverses that transformation to restore the original message.</p>
+
+    <ul>
+        <li><strong>Base64 Encode/Decode:</strong> Encodes binary data as text. Common in web APIs and emails.</li>
+        <li><strong>URL Encode/Decode:</strong> Safely sends data in URLs by converting special characters.</li>
+        <li><strong>HTML Entities:</strong> Prevent code injection and formatting errors in HTML.</li>
+        <li><strong>Hex Encode:</strong> Converts text into hexadecimal, useful in debugging and cryptography.</li>
+        <li><strong>Morse Code:</strong> Encodes text into dot-dash signals used in radio communication.</li>
+        <li><strong>ROT13:</strong> A simple letter substitution cipher that shifts letters 13 places.</li>
+    </ul>
+
+    <div class="example">
+        Text: <code>Hello</code><br>
+        Base64: <code>SGVsbG8=</code><br>
+        URL Encoded: <code>Hello%20World</code><br>
+        Morse: <code>.... . .-.. .-.. ---</code>
+    </div>
+    <ul>
+         <li><strong>Encoding & Decoding (Base64, URL, etc.):</strong>
+            <ul>
+                <li>Base64: Used in email attachments and web APIs.</li>
+                <li>URL encoding: Safely sending text in links and web forms.</li>
+                <li>Morse code: Emergency communication and amateur radio.</li>
+                <li>ROT13: Simple data obfuscation (e.g., in puzzles and forums).</li>
+                <li>HTML entities: Preventing code injection and formatting issues in web pages.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><a href="index.html">← Back to Calculator</a></p>
+</div>
+</body>
+</html>
