@@ -350,6 +350,39 @@ footer {
   padding:4px;
 }
 }
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+}
+
+body.dark-mode .dis,
+body.dark-mode #Help,
+body.dark-mode #learnSection,
+body.dark-mode #history,
+body.dark-mode #result,
+body.dark-mode #rslt button,
+body.dark-mode footer {
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
+body.dark-mode select,
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark-mode a {
+  color: #f7b538;
+}
+
   </style>
 </head>
 <body>
@@ -361,7 +394,17 @@ footer {
     <a href="index.html">Home</a>
     <a href="about_policy.html">About</a>
     <a href="about_policy.html#privacy">Privacy</a>
-    <a href="#fot">Contact</a>
+    <a href="#fot">Contact</a><br><center>
+<div style="float: right; display: flex; align-items: center; gap: 8px;">
+  <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 16 16">
+    <path d="M6 0a.5.5 0 0 1 .5.5V2a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 6 0zM2.343 2.343a.5.5 0 1 1 .707.707L2.207 4.293a.5.5 0 1 1-.707-.707l.843-.843zm9.9 0a.5.5 0 1 1 .707.707L11.293 4.293a.5.5 0 0 1-.707-.707l1.657-1.657zM8 3a5 5 0 0 1 0 10A5 5 0 0 1 8 3zM1.5 7.5a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H2a.5.5 0 0 1-.5-.5zM12 7a.5.5 0 0 1 .5.5v1.5a.5.5 0 0 1-1 0V7.5A.5.5 0 0 1 12 7zm-1.657 5.657a.5.5 0 0 1 .707-.707l1.657 1.657a.5.5 0 0 1-.707.707l-1.657-1.657zM3.707 11.293a.5.5 0 1 1 .707.707L2.757 13.657a.5.5 0 1 1-.707-.707l1.657-1.657zM6 14a.5.5 0 0 1 .5.5V16a.5.5 0 0 1-1 0v-1.5A.5.5 0 0 1 6 14z"/>
+  </svg>
+  <select id="themeSelector" onchange="applyTheme(this.value)" style="padding: 5px; font-size: 14px;">
+    <option value="light">☀️ Light</option>
+    <option value="dark">🌙 Dark</option>
+    <option value="auto">🌓 Auto</option>
+  </select></center>
+</div>
   </span>
 </nav>
 <div class="wrapper">
@@ -865,7 +908,35 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       helpPara.style.display = helpPara.style.display === "none" ? "block" : "none";
     }
   }
+  function applyTheme(theme) {
+    document.body.classList.remove("light-mode", "dark-mode");
 
+    if (theme === "dark" || (theme === "auto" && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add("dark-mode");
+      updateIcon("dark");
+    } else {
+      document.body.classList.add("light-mode");
+      updateIcon("light");
+    }
+
+    localStorage.setItem("theme", theme);
+  }
+
+  function updateIcon(theme) {
+    const icon = document.getElementById("themeIcon");
+    if (theme === "dark") {
+      icon.innerHTML = `<path d="M6 0a.5.5 0 0 1 .5.5V2a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 6 0zM2.343 2.343a.5.5 0 1 1 .707.707L2.207 4.293a.5.5 0 1 1-.707-.707l.843-.843zm9.9 0a.5.5 0 1 1 .707.707L11.293 4.293a.5.5 0 0 1-.707-.707l1.657-1.657zM8 3a5 5 0 0 1 0 10A5 5 0 0 1 8 3zM1.5 7.5a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H2a.5.5 0 0 1-.5-.5zM12 7a.5.5 0 0 1 .5.5v1.5a.5.5 0 0 1-1 0V7.5A.5.5 0 0 1 12 7zm-1.657 5.657a.5.5 0 0 1 .707-.707l1.657 1.657a.5.5 0 0 1-.707.707l-1.657-1.657zM3.707 11.293a.5.5 0 1 1 .707.707L2.757 13.657a.5.5 0 1 1-.707-.707l1.657-1.657zM6 14a.5.5 0 0 1 .5.5V16a.5.5 0 0 1-1 0v-1.5A.5.5 0 0 1 6 14z"/>`;
+    } else {
+      icon.innerHTML = `<path d="M12 6a6 6 0 1 1-6-6 5.993 5.993 0 0 1 6 6zm-5 5a5 5 0 0 0 0-10A5 5 0 0 0 7 11z"/>`;
+    }
+  }
+
+  // Load the saved theme or default to auto
+  window.onload = () => {
+    const savedTheme = localStorage.getItem("theme") || "auto";
+    document.getElementById("themeSelector").value = savedTheme;
+    applyTheme(savedTheme);
+  };
   window.onload = function () {
     const helpPara = document.getElementById("hpp");
     if (helpPara) {
