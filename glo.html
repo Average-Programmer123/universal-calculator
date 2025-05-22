@@ -5,59 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glossary - Universal Calculator</title>
   <style>
-  body {
-  font-family: 'Courier New', monospace;
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
 
-header {
-  background-color: #292929;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #444;
-}
+    header {
+      background-color: #292929;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #444;
+    }
 
-h1 {
-  color: #00d1b2;
-  margin: 0;
-  font-size: 2rem;
-}
+    h1 {
+      color: #00d1b2;
+      margin: 0;
+      font-size: 2rem;
+    }
 
-main {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-section {
-  background-color: #2e2e2e;
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+    section {
+      background-color: #333;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
 
-h2 {
-  color: #00bfff;
-  margin-bottom: 10px;
-}
+    h2 {
+      color: #00bfff;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
 
-ul {
-  padding-left: 20px;
-}
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
 
-a {
-  color: #00bfff;
-  text-decoration: none;
-}
+    li {
+      margin-bottom: 8px;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
-</style>
+    a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styling for the glossary sections */
+    section {
+      background-color: #2e2e2e;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    }
+
+    section p,
+    section ul {
+      font-size: 1.1rem;
+    }
+
+    section h2 {
+      color: #ff8c00;
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 600px) {
+      main {
+        padding: 0 10px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -90,17 +129,17 @@ a:hover {
 
     <section>
       <h2>Base64 Encoding</h2>
-      <p>A binary-to-text encoding scheme that converts binary data into a sequence of printable characters, commonly used for encoding binary data in text formats.</p>
+      <p>A binary-to-text encoding scheme that converts binary data into a sequence of printable characters, commonly used for encoding binary data in text formats like emails, URLs, or data URIs.</p>
     </section>
 
     <section>
       <h2>ASCII (American Standard Code for Information Interchange)</h2>
-      <p>A character encoding standard that represents text in computers and other devices, assigning numeric values to letters, digits, punctuation marks, and control characters.</p>
+      <p>A character encoding standard that represents text in computers and other devices by assigning numeric values to letters, digits, punctuation marks, and control characters.</p>
     </section>
 
     <section>
       <h2>Morse Code</h2>
-      <p>A method of encoding text characters as sequences of dots and dashes (or dits and dahs), used in early telecommunication systems and still utilized in certain communication applications today.</p>
+      <p>A method of encoding text characters as sequences of dots and dashes (or dits and dahs), historically used in telegraphy, and still used in certain emergency communications.</p>
     </section>
   </main>
 </body>
