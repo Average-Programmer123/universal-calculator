@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi Converter Tool - Source</title>
+  <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" type="image/x-icon">
+    <meta property="og:title" content="Universal Convrter" />
+    <meta property="og:description" content="Have trouble converting number systems, Roman numbers or other Scientific calculations? Our site will help with that. Click this link to do it." />
+    <meta property="og:image" content="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" />
+    <meta property="og:url" content="https://average-programmer123.github.io/universal-calculator">
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Universal converter" />
+    <meta name="twitter:description" content="Have trouble converting number systems, Roman numbers or Scientific symbols? Our site will help with that. Click this link to do it." />
+    <meta name="twitter:image" content="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" />
+    <meta name="google-adsense-account" content="ca-pub-6782733985170777">
+    <meta name="google-adsense-account" content="ca-pub-8331324675332828">
+    <meta name="google-site-verification" content="VtqanRWNr97xDoCNt1jOmxNSs32tBAF1QWXhJg_tVQQ" />
+    <meta name="description" content="This site converts from Decimal to Binary, Hexadecimal and Octal. Except for that it can convert text to reverse ASCII and binary. Enjoy!">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href=" https://average-programmer123.github.io/universal-calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="author" content="Suyash Lamichhane">
+    <meta name="copyright" content="© 2025 Suyash Lamichhane">
+  <style>
+    nav {
+      background-color: #ad2831;
+      margin: 0px;
+      padding: 5px;
+    }
+    .bsc {
+      font-family: "Cascadia Code";
+      margin: 0;
+      font-size: 35px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding-right: 20px;
+      font-size: 20px;
+    }
+    .navv {
+      float: right;
+      padding-top: 10px;
+    }
+    body {
+      margin: 0px;
+      font-family: "Josefin Sans";
+      background-color: white;
+    }
+    nav a:hover {
+      color: #f7b538;
+    }
+    .dis {
+      display: inline-block;
+      background-color: #edf2f4;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 40px;
+    }
+    input, select {
+      padding: 8px;
+      margin: 10px 0;
+      width: 90%;
+    }
+    .conv, .cls, .pro, .lrn {
+      padding: 7px 13.5px;
+      margin-top: 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+    .conv { background-color: #7ec4a9; }
+    .cls { background-color: #ad2831; }
+    .pro { background-color: #2d83a6; }
+    .lrn { background-color: #2A7F62; }
+    button:hover {
+      background-color: #f7b538;
+      color: black;
+    }
+    #result{
+  margin-top: 15px;
+  padding: 12px;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  white-space: pre-wrap;
+  width: 94%;
+  margin: 15px auto 0 auto;
+  box-sizing: border-box;
+  
+  /* Add this for alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-container {
+  width: 94%;
+  margin: 0 auto;
+}
+
+#Help {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: 2px solid #ad2831;
+  background-color: #fefefe;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.3s ease;
+  width: 100%; /* Matches input width if they are 100% inside the container */
+}
+
+#Help p:first-child {
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  color: #ad2831;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#Help p#hpp {
+  display: none;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #444;
+  padding-top: 10px;
+}
+
+#chevron {
+  transition: transform 0.3s ease;
+}
+
+#chevron.rotate {
+  transform: rotate(180deg);
+}
+
+    #history {
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ad2831;
+      max-height: 200px;
+      overflow-y: auto;
+      text-align: left;
+      font-size: 14px;
+    }
+    #operation {
+      width: 425px;
+    }
+    #result, #history {
+      width: 94%;
+      margin: 15px auto 0 auto;
+      box-sizing: border-box;
+    }
+    #learnSection {
+      display: none;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      max-width: 90%;
+      font-size: 15px;
+      text-align: left;
+    }
+    #learnSection button {
+      float: right;
+      background: #ad2831;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  background-color: #ad2831;
+  font-family: "Josefin Sans";
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+#rslt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  margin: 15px auto 0 auto;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#resultText {
+  flex: 1;
+  padding-right: 10px;
+}
+
+#rslt button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  top: 7px; /* 👈 THIS is the magic that aligns it vertically */
+  box-sizing: border-box;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  padding:4px;
+}
+
+#rslt button svg {
+  width: 16px;
+  height: 16px;
+  color: #ad2831;
+}
+#chevron{
+  background-color: none;
+}
+@media screen and (max-width: 700px) {
+    .navv {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    width: 100%;
+    gap: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+
+  nav a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    flex: 1 0 auto; 
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  nav {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .dis {
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  input,
+  select,
+  #operation,
+  #result,
+  #history,
+  #rslt,
+  #Help,
+  #learnSection {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+
+  .bsc {
+    font-size: 20px; 
+    line-height: 1.4;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px; 
+    padding: 5px;
+  }
+
+  .conv,
+  .cls,
+  .pro,
+  .lrn {
+    padding: 2px 4px;       /* minimal padding */
+    font-size: 11px;        /* small but readable */
+    margin: 0;              /* remove extra margin */
+    flex: 1 0 18%;          /* 5 buttons × ~18% + gap = ~100% */
+    min-width: auto;        /* no fixed width limit */
+    max-width: none;
+    box-sizing: border-box;
+    white-space: nowrap;    /* prevent breaking text */
+    text-align: center;
+  }
+  #rslt button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  top: 0px; /* 👈 THIS is the magic that aligns it vertically */
+  box-sizing: border-box;
+  border: 2px solid #ad2831;
+  background-color: #fff;
+  padding:4px;
+}
+}
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+}
+
+body.dark-mode .dis,
+body.dark-mode #Help,
+body.dark-mode #learnSection,
+body.dark-mode #history,
+body.dark-mode #result,
+body.dark-mode #rslt button,
+body.dark-mode footer {
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
+body.dark-mode select,
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark-mode a {
+  color: #f7b538;
+}
+
+  </style>
+</head>
+<body>
+<nav>
+  <span title="Universal Converter" class="bsc">
+    <b><k style="color:white; padding-left:50px;">Universal</k> <j style="color: #f7b538;">Conversion<j><m style="color: #f7b538; font-size:19px;">.com</m></b>
+  </span>
+  <span class="navv">
+    <a href="index.html">Home</a>
+    <a href="about_policy.html">About</a>
+    <a href="about_policy.html#privacy">Privacy</a>
+    <a href="#fot">Contact</a><br><center>
+<div style="float: right; display: flex; align-items: center; gap: 8px;">
+  <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 16 16">
+    <path d="M6 0a.5.5 0 0 1 .5.5V2a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 6 0zM2.343 2.343a.5.5 0 1 1 .707.707L2.207 4.293a.5.5 0 1 1-.707-.707l.843-.843zm9.9 0a.5.5 0 1 1 .707.707L11.293 4.293a.5.5 0 0 1-.707-.707l1.657-1.657zM8 3a5 5 0 0 1 0 10A5 5 0 0 1 8 3zM1.5 7.5a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H2a.5.5 0 0 1-.5-.5zM12 7a.5.5 0 0 1 .5.5v1.5a.5.5 0 0 1-1 0V7.5A.5.5 0 0 1 12 7zm-1.657 5.657a.5.5 0 0 1 .707-.707l1.657 1.657a.5.5 0 0 1-.707.707l-1.657-1.657zM3.707 11.293a.5.5 0 1 1 .707.707L2.757 13.657a.5.5 0 1 1-.707-.707l1.657-1.657zM6 14a.5.5 0 0 1 .5.5V16a.5.5 0 0 1-1 0v-1.5A.5.5 0 0 1 6 14z"/>
+  </svg>
+  <select id="themeSelector" onchange="applyTheme(this.value)" style="padding: 5px; font-size: 14px;">
+    <option value="light">☀️ Light</option>
+    <option value="dark">🌙 Dark</option>
+    <option value="auto">🌓 Auto</option>
+  </select></center>
+</div>
+  </span>
+</div>
+</nav>
+
+<center>
+<div class = "dis">
+  <p>Choose the source:</p>
+  <select id="opti" onchange="change()">
+    <option value="num-sys">
+      Number System
+    </option>
+    <option value="btw-btsh">
+      Bitwise and Bitshift
+    </option>
+    <option value="Edcode">
+      Encoding/Decoding
+    </option>
+  </select>
+  <p>Credits:<a id="credit" href = "https://www.ipsgwalior.org/download/number%20system.pdf">ipsgwalior.org</a> <br>Click this to open the original PDF</p>
+<iframe id = "pdff" src="pdf-files/number system.pdf" frameborder="0" width = "400" height="400" style="padding: 20px;"></iframe>
+</div>
+</center>
+<section id="fot" class="fot" name="fot">
+<footer style="background-color: #ad2831; font-family: 'Josefin Sans'; color: white; padding: 30px 20px;">
+  <div style="text-align: center; margin-bottom: 20px; font-size: 16px;">
+    &copy; Suyash L.C | 2025 | All rights reserved.
+  </div>
+
+  <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; background-color: white; color: black; padding: 25px 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-top: 0; color: #ad2831;">Connect With Me</h3>
+      <p>Email: <a href="mailto:dotpy9579@gmail.com" style="color: #ad2831;">dotpy9579@gmail.com</a></p>
+      <p>
+        <a href="https://github.com/Average-Programmer123" target="_blank" style="color: #ad2831; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;"> GitHub
+        </a>
+      </p>
+      <p>
+        <a href="https://www.youtube.com/@program.1234" target="_blank" style="color: #ad2831; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" style="width: 20px; vertical-align: middle; margin-right: 5px;"> YouTube
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+</section>
+</body>
+<script>
+  function change(){
+    const credit_text = ["ipsgwalior.org", "University of Waterloo", "Université TÉLUQ"];
+    const url = ["https://www.ipsgwalior.org/download/number%20system.pdf", 
+    "https://ece.uwaterloo.ca/~ece150/Lecture_materials/pdfs/1.27%20Bit-wise%20and%20-shift%20operators.pdf", 
+    "https://r-libre.teluq.ca/1362/1/base64.pdf"];
+    let txt = "";
+    let url1 = " ";
+    let c = "";
+    const b = document.getElementById("opti").value;
+    const a = document.getElementById("pdff").src;
+    if (b == "num-sys"){
+      c = "pdf-files/number system.pdf";
+      txt = credit_text[0];
+      url1 = url[0]   ;
+  }
+  if (b == "btw-btsh"){
+    c = "pdf-files/bitwise-bitshift.pdf";
+    txt = credit_text[1];
+    url1 = url[1]   ;
+  }
+  if (b == "Edcode"){
+    c = "pdf-files/bitwise-bitshift.pdf";
+    txt = credit_text[2];
+    url1 = url[2]   ;
+  }
+  document.getElementById("pdff").src = c;
+  document.getElementById("credit").innerText = txt;
+  document.getElementById("credit").href = url1;
+}
+</script>
+</html>
