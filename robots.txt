@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://average-programmer123.github.io/universal-calculator/sitemap.xml
