@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi Converter Tool</title>
+  <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20241204/ourlarge/pngtree-calculator-icon-isolated-on-white-background-vector-png-image_14603960.png" type="image/x-icon">
+  
+  <style>
+    @keyframes appear{
+    from{
+        opacity:0.5;
+        scale:0.5;
+    }
+    to{
+        opacity:1;
+        scale:1;
+    }
+}
+    nav {
+      background-color: #ad2831;
+      margin: 0px;
+      padding: 5px;
+    }
+    .faq-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dis {
+  background-color: #ffffff;
+  padding: 40px;
+  font-size: xx-large;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ad2831;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+      animation:appear linear;
+    animation-timeline:view();
+    animation-range: entry 0% cover 40%;
+}
+
+.dis:hover {
+  transform: scale(1.01);
+}
+
+body, p, li {
+  line-height: 1.6;
+  font-size: 17px;
+  color: #333;
+}
+
+h3 {
+  color: #ad2831;
+}
+
+body.dark-mode .dis {
+  background-color: #2b2b2b;
+  border-color: #444;
+  color: #f1f1f1;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 150%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+    .bsc {
+      font-family: "Cascadia Code";
+      margin: 0;
+      font-size: 35px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding-right: 20px;
+      font-size: 20px;
+    }
+
+    .navv {
+      float: right;
+      padding-top: 10px;
+    }
+
+    body {
+      margin: 0px;
+      font-family: "Josefin Sans";
+      background-color: white;
+    }
+
+    nav a:hover {
+      color: #f7b538;
+    }
+
+    h1 {
+      font-family: "Josefin Sans";
+      text-align: center;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: "Casadia Code";
+    }
+
+    footer {
+      background-color: #ad2831;
+      font-family: "Josefin Sans";
+      padding: 10px;
+      color: white;
+      text-align: center;
+    }
+           .dis{
+      background-color: #edf2f4;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 40px;
+    }
+    @media screen and (max-width: 700px) {
+      .navv {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+        width: 100%;
+        gap: 10px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+      }
+
+      nav a {
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px;
+        text-align: center;
+        flex: 1 0 auto; 
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      nav {
+        width: 100%;
+        padding: 8px 0;
+      }
+
+      .bsc {
+        font-size: 20px; 
+        line-height: 1.4;
+      }
+    }
+
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+    }
+
+    body.dark-mode nav {
+      background-color: #333;
+    }
+
+    body.dark-mode footer {
+      background-color: #2b2b2b;
+      color: #f1f1f1;
+      border-color: #555;
+    }
+
+    body.dark-mode select,
+    body.dark-mode input,
+    body.dark-mode button {
+      background-color: #444;
+      color: #fff;
+      border-color: #666;
+    }
+
+    body.dark-mode a {
+      color: #f7b538;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <span title="Universal Converter" class="bsc">
+    <b><k style="color:white; padding-left:50px;">Universal</k> <j style="color: #f7b538;">Conversion</j><m style="color: #f7b538; font-size:19px;">.com</m></b>
+  </span>
+  <span class="navv">
+    <a href="index.html">Home</a>
+    <a href="about_policy.html">About</a>
+    <a href="about_policy.html#privacy">Privacy</a>
+    <a href="#fot">Contact</a><br><center>
+  </span>
+</nav>
+<div class="faq-wrapper">
+  <h1 style="font-family: Josefin Sans; text-align: center;">Frequently Asked Questions (FAQ)</h1>
+<center>
+<div class="dis">
+    <h3>
+        What is Universal Calculator?
+    </h3>
+    <p>- The Universal Calculator is a multi-purpose web tool designed to perform various calculations and conversions like Bitwise/Bitshift, binary, hexadecimal, and more—all in one place.</p>
+</div>
+<div class="dis">
+    <h3>
+         Is this calculator free to use?
+    </h3>
+    <p>- Yes, this calculator is and will be forever free.</p>
+</div>
+<div class="dis">
+    <h3>
+         Do I need to <b>Download</b> anything?
+    </h3>
+    <p>- No, this tool is entirely web-based. Just open the site and start using it—no installations required.</p>
+</div>
+<div class="dis">
+    <h3>
+         Is my data stored or tracked?
+    </h3>
+    <p>- No, every action is saved and done locally we do not take any data.</p>
+</div>
+<div class="dis">
+    <h3>
+         Is this site accurate?
+    </h3>
+    <p>- Yes, this site uses generic Mathematical formulas and logic from various sources and PDF files from trusted authors. <br><a href="pdf.html">Click me</a> to see the sources used for this site</p>
+</div>
+<div class="dis">
+    <h3>
+         Can I use this on Mobile devices?
+    </h3>
+    <p>- Yes, this site is optimized for Mobile, Tablet and Desktop environments though it may look slightly different depending on the device or the device width.</p>
+</div>
+<div class="dis">
+    <h3>
+        Will there be more tools added?
+    </h3>
+    <p>- Yes, this site will be updated in the future and add more tools. Look at our <a href="updt.html">Update</a> page for more information related to update and version info.</p>
+</div>
+<div class="dis">
+    <h3>
+        I found a bug how can I report it?
+    </h3>
+    <p>- There are various ways to report a bug here are a few ways:
+        <ul>
+            <li>
+                Using our Email in the footer: You can navigate to the footer or click the "Contact" button from the navigation bar and email us at the given Email ID.
+            </li>
+            <li>
+                Using the feedback form: Just below the Social Media links there would be an embeded feedback form. You use that to also report bugs. 
+            </li>
+        </ul>
+    </p>
+</div>
+<div class="dis">
+    <h3>
+        Is this site open source?
+    </h3>
+    <p>- Yes, this site is open source. The source code is in my GitHub and is named "universal calculator." <a href="https://github.com/Average-Programmer123/universal-calculator">Click me</a> for the exact url of the repository.</p>
+</div>
+</div>
+</center>
+<section id="fot" class="fot" name="fot">
+<footer style="background-color: #ad2831; font-family: 'Josefin Sans'; color: white; padding: 30px 20px;">
+  <div style="text-align: center; margin-bottom: 20px; font-size: 16px;">
+    &copy; Suyash L.C | 2025 | All rights reserved.
+  </div>
+
+  <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; background-color: white; color: black; padding: 25px 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-top: 0; color: #ad2831;">Connect With Me</h3>
+      <p>Email: <a href="mailto:dotpy9579@gmail.com" style="color: #ad2831;">dotpy9579@gmail.com</a></p>
+      <p>
+        <a href="https://github.com/Average-Programmer123" target="_blank" style="color: #ad2831; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;"> GitHub
+        </a>
+      </p>
+      <p>
+        <a href="https://www.youtube.com/@program.1234" target="_blank" style="color: #ad2831; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" style="width: 20px; vertical-align: middle; margin-right: 5px;"> YouTube
+        </a>
+      </p>
+      <div class="embed-container">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPxgVDckW10JG4rDll7bFay8_JbNDQwWHzoGVUFqC46Ts0Yg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+    </div>
+  </div>
+</footer>
+</section>
+
+</body>
+</html>
